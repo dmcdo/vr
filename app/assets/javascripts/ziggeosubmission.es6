@@ -51,9 +51,9 @@ var pageReady = function(checkrecorder){
 			  $(document).on('click', '.shade_close', function() {
 
 					// Discard image preview
-					$('.media_wrapper').show();
-					$('.img_prev').hide();
-					$(".img_prev").attr("src",null);
+					$('.media_wrapper').show(); // Show the video record buttons
+					$('.img_prev').hide(); // Hide the preview
+					$(".img_prev").attr("src",""); // Set source image to nothing
 
 					// Discard Video Preview
 					recorder.reset();

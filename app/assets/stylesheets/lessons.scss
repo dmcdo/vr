@@ -1184,6 +1184,7 @@
   .title{ padding-left: 10px;}
 }
 
+/* For Image Uploader */
 #img_prev {
   padding: 5px !important;
   max-width: 100% !important;
@@ -1192,4 +1193,19 @@
   width: auto !important;
   margin: 0 auto !important;
   text-align: center !important;
+}
+
+input[type='file'] + span {
+  margin-left: 155.9px;
+  margin-right: 155.9px;
+  background-color: #88ccff !important;
+  color: #fff !important;
+  text-align: center;
+  cursor: default !important;
+}
+
+input#explanation_image, input#prompt_image, input#model_image {
+    padding-bottom: 13px;
+    width: 172px;
+    margin-left: 156px;
 }
