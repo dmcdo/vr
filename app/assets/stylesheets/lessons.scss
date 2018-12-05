@@ -1175,11 +1175,21 @@
     width: 270px;
     float: left;
   }
-  
+
   .all_rehearsals_list {
     width: 100%;
     float: left;
   }
-  
+
   .title{ padding-left: 10px;}
+}
+
+#img_prev {
+  padding: 5px !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  height: auto !important;
+  width: auto !important;
+  margin: 0 auto !important;
+  text-align: center !important;
 }

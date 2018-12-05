@@ -11,17 +11,18 @@ var pageReady = function(checkrecorder){
 				// console.log(recorderClass);
 
         // save explanation,prompt,model if there is an image in the form
-        $('#img_prev').hide();
+        $('.img_prev').hide();
         $(document).on('change', '.uploaded', function() {
-          $('.ziggeo').remove();
-          $('#img_prev').show();
-        
+          // $('.ziggeo').remove();
+					$('.media_wrapper').hide();
+          $('.img_prev').css('display', 'block', 'important'); // Display must be block to center preview
+
           var input = this;
           if (input.files && input.files[0]) {
           var reader = new FileReader();
 
           reader.onload = function (e) {
-            $('#img_prev')
+            $('.img_prev')
               .attr('src', e.target.result)
               .width(150)
               .height(200);
@@ -41,13 +42,20 @@ var pageReady = function(checkrecorder){
                recorder.reset();
              }
            });
-         })
+         });
 
 			    var recorder = ZiggeoApi.V2.Recorder.findByElement($('ziggeorecorder.'+recorderClass));
 			    // console.log(recorder);
 			    // recorder.record();
 
 			  $(document).on('click', '.shade_close', function() {
+
+					// Discard image preview
+					$('.media_wrapper').show();
+					$('.img_prev').hide();
+					$(".img_prev").attr("src",null);
+
+					// Discard Video Preview
 					recorder.reset();
 					$(this).closest('.shadebox').find('.save_'+recorderClass).show();
 					$(this).closest('.shadebox_bg').find('form')[0].reset();
